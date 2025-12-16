@@ -5,7 +5,7 @@ import httpStatus from "http-status";
 import config from "./app/config";
 import notFoundHandler from "./app/middleware/not-found-handler";
 import globalErrorHandler from "./app/middleware/global-error-handler";
-// import router from "./app/routes";
+import router from "./app/routes";
 
 const app: Application = express();
 
@@ -29,7 +29,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // main routes
-// app.use("/api/v1", router);
+app.use("/api/v1", router);
 
 // handle error
 app.use(globalErrorHandler);
