@@ -3,8 +3,8 @@ import cors from "cors";
 import express, { Application, Request, Response } from "express";
 import httpStatus from "http-status";
 import config from "./app/config";
-import notFoundHandler from "./app/middleware/not-found-handler";
 import globalErrorHandler from "./app/middleware/global-error-handler";
+import notFoundHandler from "./app/middleware/not-found-handler";
 import router from "./app/routes";
 
 const app: Application = express();
