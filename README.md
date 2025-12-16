@@ -25,7 +25,7 @@ A production-ready starter template for building RESTful APIs with **Express.js*
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:codemine24/express-drizzle-starter.git
 cd drizzle
 ```
 
@@ -111,10 +111,12 @@ Each feature module follows a consistent pattern:
 ```typescript
 // user.schemas.ts - Validation
 const createUser = z.object({
-  body: z.object({
-    name: z.string({ message: "Name is required" }),
-    email: z.string().email({ message: "Invalid email address" }),
-  }).strict(),
+  body: z
+    .object({
+      name: z.string({ message: "Name is required" }),
+      email: z.string().email({ message: "Invalid email address" }),
+    })
+    .strict(),
 });
 
 // user.interfaces.ts - Types
@@ -232,6 +234,7 @@ export default {
 ### VS Code Settings
 
 The `.vscode/settings.json` automatically:
+
 - Removes unused imports on save
 - Organizes imports alphabetically
 - Formats code on save
@@ -266,25 +269,27 @@ router.post(
 Configured in `src/app.ts`:
 
 ```typescript
-app.use(cors({
-  origin: ["http://localhost:3000"],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 ```
 
 ## 📦 Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Express.js | Web framework |
-| Drizzle ORM | Database ORM |
-| Zod | Schema validation |
-| TypeScript | Type safety |
-| PostgreSQL | Database |
-| ts-node-dev | Development server |
-| cookie-parser | Cookie parsing |
-| cors | CORS handling |
-| http-status | HTTP status codes |
+| Technology    | Purpose            |
+| ------------- | ------------------ |
+| Express.js    | Web framework      |
+| Drizzle ORM   | Database ORM       |
+| Zod           | Schema validation  |
+| TypeScript    | Type safety        |
+| PostgreSQL    | Database           |
+| ts-node-dev   | Development server |
+| cookie-parser | Cookie parsing     |
+| cors          | CORS handling      |
+| http-status   | HTTP status codes  |
 
 ## 🤝 Contributing
 
